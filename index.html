@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        // function findMinMax(v1, v2){
+        //     if (v1<v2){
+        //         return -1;
+        //     }
+        //     else if(v1>v2){
+        //         return 1;
+        //     }
+        //     else{
+        //         return 0;
+        //     }
+        // }
+        // let res=findMinMax(1, 5);
+        // document.write(res);
+
+
+
+        // function factorial(v){
+        //  if(v<0){
+        //     return undefined;
+        //  }
+        //  if((v==0) || (v==1)){
+        //     return 1;
+        //  }
+        //  return v*factorial(v-1);
+
+        // }
+        // let res=factorial(5);
+        // document.write(res);
+
+
+
+
+        // function numbers(v1, v2, v3){
+        //     if(v1==0){
+        //         document.write("Числа введены некорректно!");
+        //         return;
+        //     }
+        // let res=parseInt(""+v1+v2+v3);
+        // return res;
+        // }
+        //  let res=numbers(5, 6, 7);
+        // document.write(res);
+
+
+
+
+// function S(v1, v2){
+//             if(v2==undefined){
+//                 v2=v1;
+//             }
+//         let res=v1*v2;
+//         return res;
+//         }
+//          let res=S(5);
+//         document.write(res);
+
+
+// function isPerfectNumber(v) {
+//     let sumOfDivisors = 0;
+
+//     for (let i=1;i<v;i++) {
+//         if (v%i===0) {
+//             sumOfDivisors+=i;
+//         }
+//     }
+
+//     document.write(sumOfDivisors);
+//     document.write("<br />");
+//     let isOk;
+
+//     if (sumOfDivisors===v) {
+//         isOk=true;
+//         document.write("Число является совершенным! <br />");
+//     } else {
+//         isOk=false;
+//         document.write("Число не является совершенным! <br />");
+//     }
+
+//     return isOk;
+// }
+// isPerfectNumber(28); 
+// isPerfectNumber(6);  
+// isPerfectNumber(12); 
+
+// function isPerfectNumberRange(min, max){
+//     for (let i=min;i<=max;i++){
+//         document.write("Число "+i+": <br />");
+//         isPerfectNumber(i);
+//     }
+// }
+// isPerfectNumberRange(1, 8);
+
+
+// function date(s, m, h){
+//     if(s==undefined){
+//         s="00";
+//     }
+//     if(m==undefined){
+//         m="00";
+//     }
+//     if(h==undefined){
+//         h="00";
+//     }
+//     document.write(h+" : "+m+" : "+s);
+// }
+// date(23, 54);
+
+
+
+function secTime(h, m, s){
+    let res=(h*3600)+(m*60)+s;
+    return res;
+}
+// let res=secTime(1, 23, 39);
+// document.write(res);
+
+
+
+function timeFromSec(s){
+   let m=0;
+   let h=0;
+    if (s>=60){
+        while(s>=60){
+        m++;
+        s-=60;
+    }
+    }
+    else{
+        m="00";
+        h="00";
+    }
+    
+    
+    while(m>60){
+        h++;
+        m-=60;
+    }
+    if (s<10 && s>0){
+        s="0"+s;
+    }
+    if (m<10 && m>0){
+        m="0"+m;
+    }
+    if (h<10 && h>0){
+        h="0"+h;
+    }
+    document.write(h+" : "+m+" : "+s);
+}
+// timeFromSec(28742);
+
+function lastInHW(s1, s2, m1, m2, h1, h2){
+let dateSec1=secTime(s1, m1, h1);
+let dateSec2=secTime(s2, m2, h2);
+let res=dateSec1-dateSec2;
+timeFromSec(res);
+}
+lastInHW(23, 20, 45, 40, 7, 5)
+    </script>
+</body>
+</html>
